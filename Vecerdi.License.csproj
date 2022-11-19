@@ -9,8 +9,19 @@
         <ToolCommandName>license</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
 
-        <PackageVersion>1.0.2</PackageVersion>
-        <PackageReleaseNotes>Fixed invalid nuspec/project format making it impossible to install package using `dotnet tool install`</PackageReleaseNotes>
+        <PackageVersion>1.0.3</PackageVersion>
+        <PackageReleaseNotes>
+            Added the following SPDX short identifiers:
+
+            - ISC
+            - Apache-2.0
+            - BSD-3-Clause
+            - BSD-2-Clause
+            - GPL-3.0-only
+            - GPL-2.0
+            - MPL-2.0
+            - Unlicense
+        </PackageReleaseNotes>
 
         <Title>Vecerdi.License</Title>
         <PackageId>Vecerdi.License</PackageId>
