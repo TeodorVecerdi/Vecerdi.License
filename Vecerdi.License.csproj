@@ -9,6 +9,7 @@
         <PackAsTool>true</PackAsTool>
         <ToolCommandName>license</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
+        <Version>1.0.1</Version>
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />

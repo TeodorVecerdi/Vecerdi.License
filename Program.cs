@@ -5,8 +5,9 @@ internal static class Program {
     /// Generates a license file based on the given license type.
     /// </summary>
     /// <param name="license">The license type</param>
-    /// <param name="output">The output file path</param>
-    public static void Main(License license = License.MIT, string output = "./LICENSE") {
+    /// <param name="output">The output file path [default: "./LICENSE"]</param>
+    public static void Main(License license = License.MIT, FileInfo? output = null) {
+        output ??= new FileInfo("./LICENSE");
         Console.WriteLine($"Generating {license} license at '{output}'...");
         string licenseText = s_LicenseTexts[license];
         Placeholder[] placeholders = s_LicensePlaceholders[license];
@@ -33,7 +34,7 @@ internal static class Program {
         }
 
         // Write license file
-        File.WriteAllText(output, licenseText);
+        File.WriteAllText(output.FullName, licenseText);
     }
 
     private static readonly Dictionary<License, string> s_LicenseTexts = new() {
