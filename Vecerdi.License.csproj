@@ -5,41 +5,34 @@
         <LangVersion>preview</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-
         <PackAsTool>true</PackAsTool>
-        <ToolName>license</ToolName>
         <ToolCommandName>license</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
-        <NuspecFile>$(MSBuildThisFileDirectory)$(MSBuildProjectName).nuspec</NuspecFile>
+
+        <PackageVersion>1.0.2</PackageVersion>
+        <PackageReleaseNotes>Fixed invalid nuspec/project format making it impossible to install package using `dotnet tool install`</PackageReleaseNotes>
 
         <Title>Vecerdi.License</Title>
         <PackageId>Vecerdi.License</PackageId>
         <Authors>Teodor Vecerdi</Authors>
         <Author>Teodor Vecerdi</Author>
         <Description>Generate license files for your projects</Description>
-        <Version>1.0.1</Version>
+
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/TeodorVecerdi/Vecerdi.License</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/TeodorVecerdi/Vecerdi.License</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>license;license-generator;license-file;license-generator-dotnet;dotnet-tool;tool</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
-    <Target Name="SetNuspecProperties" BeforeTargets="GenerateNuspec">
-        <PropertyGroup>
-            <NuspecProperties>$(NuspecProperties);id=$(PackageId)</NuspecProperties>
-            <NuspecProperties>$(NuspecProperties);config=$(Configuration)</NuspecProperties>
-            <NuspecProperties>$(NuspecProperties);version=$(Version)</NuspecProperties>
-            <NuspecProperties>$(NuspecProperties);description=$(Description)</NuspecProperties>
-            <NuspecProperties>$(NuspecProperties);authors=$(Authors)</NuspecProperties>
-            <NuspecProperties>$(NuspecProperties);author=$(Author)</NuspecProperties>
-            <NuspecProperties>$(NuspecProperties);title=$(Title)</NuspecProperties>
-        </PropertyGroup>
-        <Message Importance="high" Text="NuspecProperties: $(NuspecProperties)"/>
-    </Target>
-
     <ItemGroup>
-        <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1"/>
-        <PackageReference Include="System.CommandLine.DragonFruit" Version="0.4.0-alpha.22272.1"/>
+        <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+        <PackageReference Include="System.CommandLine.DragonFruit" Version="0.4.0-alpha.22272.1" />
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="README.md" Pack="true" PackagePath="\"/>
-        <None Include="LICENSE" Pack="true" PackagePath="\"/>
+        <None Include="README.md" Pack="true" PackagePath="\" />
+        <None Include="LICENSE" Pack="true" PackagePath="\" />
     </ItemGroup>
 </Project>
