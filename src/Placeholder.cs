@@ -1,1 +1,3 @@
-﻿internal readonly record struct Placeholder(string Name, string Key, string? SuggestedValue);
+﻿namespace Vecerdi.License;
+
+internal readonly record struct Placeholder(string Name, string Key, string? SuggestedValue);
