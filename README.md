@@ -1,5 +1,7 @@
 # Vecerdi.License
 
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Vecerdi.License)
+
 Generate license files for your projects.
 
 Available SPDX identifiers:
