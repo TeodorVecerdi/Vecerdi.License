@@ -28,6 +28,7 @@
         <Authors>Teodor Vecerdi</Authors>
         <Author>Teodor Vecerdi</Author>
         <Description>Generate license files for your projects</Description>
+        <Version>$(PackageVersion)</Version>
 
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/TeodorVecerdi/Vecerdi.License</PackageProjectUrl>
