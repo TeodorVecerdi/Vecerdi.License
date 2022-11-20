@@ -1,6 +1,6 @@
 # Vecerdi.License
 
-![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Vecerdi.License)
+[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Vecerdi.License)](https://www.nuget.org/packages/Vecerdi.License/)
 
 Generate license files for your projects.
 
