@@ -6,23 +6,30 @@ internal static class Program {
     /// </summary>
     /// <param name="license">The license type (SPDX short identifier; e.g., GPL-3.0)</param>
     /// <param name="output">The output file path [default: "./LICENSE"]</param>
-    public static void Main(string license = License.MIT, FileInfo? output = null) {
+    /// <param name="silent">Whether to suppress console output</param>
+    /// <param name="skipPlaceholders">Whether to skip placeholder replacement and accept defaults</param>
+    public static void Main(string license = License.MIT, FileInfo? output = null, bool silent = false, bool skipPlaceholders = false) {
         if (!TryGetLicenseText(license, out string licenseText)) {
             DisplayLicensesAndExit(license);
         }
 
         output ??= new FileInfo("./LICENSE");
-        Console.WriteLine($"Generating {license} license at '{output}'...");
+        if (!silent) Console.WriteLine($"Generating {license} license at '{output}'...");
 
         Placeholder[] placeholders = GetLicensePlaceholders(license);
 
         foreach (Placeholder placeholder in placeholders) {
-            // Ask user for input
-            Console.Write($"{placeholder.Name}");
-            if (!string.IsNullOrEmpty(placeholder.SuggestedValue)) {
-                Console.Write($" [{placeholder.SuggestedValue}]");
+            if (skipPlaceholders) {
+                licenseText = licenseText.Replace(placeholder.Key, placeholder.SuggestedValue);
+                continue;
             }
-            Console.Write(": ");
+
+            // Ask user for input
+            if(!silent) Console.Write($"{placeholder.Name}");
+            if (!string.IsNullOrEmpty(placeholder.SuggestedValue)) {
+                if(!silent) Console.Write($" [{placeholder.SuggestedValue}]");
+            }
+            if(!silent) Console.Write(": ");
 
             if (Console.ReadLine() is not { } input) {
                 return;
