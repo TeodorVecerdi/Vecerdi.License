@@ -9,10 +9,12 @@
         <ToolCommandName>license</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
 
-        <PackageVersion>1.0.4</PackageVersion>
+        <PackageVersion>1.1.0</PackageVersion>
         <PackageReleaseNotes>
-            - Added --silent option
-            - Added --skip-placeholders option
+- Renamed --skip-placeholders option to --accept-placeholders
+- Added -a alias for --accept-placeholders
+- Added -s alias for --silent
+- Added list subcommand
         </PackageReleaseNotes>
 
         <Title>Vecerdi.License</Title>
@@ -32,7 +34,6 @@
 
     <ItemGroup>
         <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
-        <PackageReference Include="System.CommandLine.DragonFruit" Version="0.4.0-alpha.22272.1" />
     </ItemGroup>
 
     <ItemGroup>

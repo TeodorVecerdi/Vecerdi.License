@@ -29,18 +29,21 @@ dotnet tool install -g Vecerdi.License
 $ license --help
 
 Description:
-  Generates a license file based on the given license type.
+  Generates a license file based on the given SPDX identifier.
 
 Usage:
-  license [options]
+  license [command] [options]
 
 Options:
-  --license <license>  The license type (SPDX short identifier; e.g., GPL-3.0) [default: MIT]
-  --output <output>    The output file path [default: "./LICENSE"]
-  --silent             Whether to suppress console output [default: False]
-  --skip-placeholders  Whether to skip placeholder replacement and accept defaults [default: False]
-  --version            Show version information
-  -?, -h, --help       Show help and usage information
+  -i, --license, --spdx-identifier <SPDX>  The SPDX identifier of the license to generate. [default: MIT]
+  -o, --output <file>                      The output file path. [default: ./LICENSE]
+  -s, --silent                             Suppress console output.
+  -a, --accept-placeholders                Accept default values for placeholders in the license text.
+  --version                                Show version information
+  -?, -h, --help                           Show help and usage information
+
+Commands:
+  list  List supported SPDX license identifiers
 ```
 
 ### Example
