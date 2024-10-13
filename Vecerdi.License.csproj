@@ -8,12 +8,11 @@
         <ToolCommandName>license</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
 
-        <PackageVersion>1.1.0</PackageVersion>
+        <PackageVersion>1.2.0</PackageVersion>
         <PackageReleaseNotes>
-- Renamed --skip-placeholders option to --accept-placeholders
-- Added -a alias for --accept-placeholders
-- Added -s alias for --silent
-- Added list subcommand
+- Changed target framework to net9.0
+- Added NON-AI versions of the MIT and Apache 2.0 licenses 
+- Changed default license to NON-AI-MIT
         </PackageReleaseNotes>
 
         <Title>Vecerdi.License</Title>
