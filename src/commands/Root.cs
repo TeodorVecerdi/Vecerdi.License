@@ -62,6 +62,21 @@ public static class Root {
         return rootCommand;
     }
 
+    public static string GetLicenseText(string identifier) {
+        return identifier switch {
+            License.MIT => MIT.Text,
+            License.ISC => ISC.Text,
+            License.APACHE_2_0 => Apache2.Text,
+            License.BSD_3_CLAUSE => BSD3Clause.Text,
+            License.BSD_2_CLAUSE => BSD2Clause.Text,
+            License.GPL_3_0 => GPL3.Text,
+            License.GPL_2_0 => GPL2.Text,
+            License.MPL_2_0 => MPL2.Text,
+            License.UNLICENSE => Unlicense.Text,
+            _ => throw new Exception($"Unknown SPDX identifier '{identifier}'")
+        };
+    }
+
     private static void GenerateLicense(string identifier, FileInfo output, bool silent, bool acceptPlaceholders) {
         string licenseText = GetLicenseText(identifier);
         if (!silent) Console.WriteLine($"Generating {identifier} license at '{output}'...");
@@ -103,21 +118,6 @@ public static class Root {
         sb.AppendLine(List.GetAvailableIdentifiers());
 
         return sb.ToString();
-    }
-
-    private static string GetLicenseText(string identifier) {
-        return identifier switch {
-            License.MIT => MIT.Text,
-            License.ISC => ISC.Text,
-            License.APACHE_2_0 => Apache2.Text,
-            License.BSD_3_CLAUSE => BSD3Clause.Text,
-            License.BSD_2_CLAUSE => BSD2Clause.Text,
-            License.GPL_3_0 => GPL3.Text,
-            License.GPL_2_0 => GPL2.Text,
-            License.MPL_2_0 => MPL2.Text,
-            License.UNLICENSE => Unlicense.Text,
-            _ => throw new Exception($"Unknown SPDX identifier '{identifier}'")
-        };
     }
 
     private static Placeholder[] GetLicensePlaceholders(string identifier) {

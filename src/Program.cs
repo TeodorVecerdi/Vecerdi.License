@@ -1,6 +1,8 @@
 ﻿using System.CommandLine;
 using Vecerdi.License;
 
-RootCommand rootCommand = Root.GetCommand();
+var rootCommand = Root.GetCommand();
 rootCommand.AddCommand(List.GetCommand());
+rootCommand.AddCommand(Print.GetCommand());
+
 return await rootCommand.InvokeAsync(args);
