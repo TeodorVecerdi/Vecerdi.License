@@ -11,7 +11,7 @@ internal static class License {
     public const string MPL_2_0 = "MPL-2.0";
     public const string UNLICENSE = "Unlicense";
 
-    public static readonly HashSet<string> All = new() {
+    public static readonly HashSet<string> All = [
         MIT,
         APACHE_2_0,
         BSD_3_CLAUSE,
@@ -19,6 +19,6 @@ internal static class License {
         GPL_3_0,
         GPL_2_0,
         MPL_2_0,
-        UNLICENSE
-    };
+        UNLICENSE,
+    ];
 }

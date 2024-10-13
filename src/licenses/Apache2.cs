@@ -19,8 +19,8 @@ internal static class Apache2 {
         limitations under the License.
         """;
 
-    public static readonly Placeholder[] Placeholders = {
+    public static readonly Placeholder[] Placeholders = [
         new("Year", "[yyyy]", DateTime.Now.Year.ToString()),
-        new("Copyright Owner", "[name of copyright owner]", "Teodor Vecerdi")
-    };
+        new("Copyright Owner", "[name of copyright owner]", "Teodor Vecerdi"),
+    ];
 }

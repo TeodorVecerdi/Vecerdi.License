@@ -13,8 +13,8 @@ internal static class GPL2 {
         You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
         """;
 
-    public static readonly Placeholder[] Placeholders = {
+    public static readonly Placeholder[] Placeholders = [
         new("Year", "<year>", DateTime.Now.Year.ToString()),
-        new("Author", "<name of author>", "Teodor Vecerdi")
-    };
+        new("Author", "<name of author>", "Teodor Vecerdi"),
+    ];
 }

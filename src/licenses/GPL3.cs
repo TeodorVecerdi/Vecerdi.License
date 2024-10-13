@@ -20,8 +20,8 @@ internal static class GPL3 {
         along with this program.  If not, see <http://www.gnu.org/licenses/>.
         """;
 
-    public static readonly Placeholder[] Placeholders = {
+    public static readonly Placeholder[] Placeholders = [
         new("Year", "<year>", DateTime.Now.Year.ToString()),
-        new("Author", "<name of author>", "Teodor Vecerdi")
-    };
+        new("Author", "<name of author>", "Teodor Vecerdi"),
+    ];
 }

@@ -6,7 +6,7 @@ namespace Vecerdi.License;
 public static class Root {
     public static RootCommand GetCommand() {
         Option<string> spdxIdentifier = new(
-            aliases: new[] { "--spdx-identifier", "--license", "-i" },
+            aliases: ["--spdx-identifier", "--license", "-i"],
             description: "The SPDX identifier of the license to generate.",
             getDefaultValue: () => License.MIT
         ) {
@@ -23,7 +23,7 @@ public static class Root {
         });
 
         Option<FileInfo> output = new(
-            aliases: new[] { "--output", "-o" },
+            aliases: ["--output", "-o"],
             description: "The output file path.",
             getDefaultValue: () => new FileInfo("./LICENSE")
         ) {
@@ -33,7 +33,7 @@ public static class Root {
         };
 
         Option<bool> silent = new(
-            aliases: new[] { "--silent", "-s" },
+            aliases: ["--silent", "-s"],
             description: "Suppress console output."
         ) {
             IsRequired = false,
@@ -41,7 +41,7 @@ public static class Root {
         };
 
         Option<bool> acceptPlaceholders = new(
-            aliases: new[] { "--accept-placeholders", "-a" },
+            aliases: ["--accept-placeholders", "-a"],
             description: "Accept default values for placeholders in the license text."
         ) {
             IsRequired = false,

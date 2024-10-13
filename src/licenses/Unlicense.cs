@@ -30,5 +30,5 @@ internal static class Unlicense {
         For more information, please refer to <http://unlicense.org/>
         """;
 
-    public static readonly Placeholder[] Placeholders = Array.Empty<Placeholder>();
+    public static readonly Placeholder[] Placeholders = [];
 }
