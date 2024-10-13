@@ -15,6 +15,8 @@ Available SPDX identifiers:
 - GPL-2.0
 - MPL-2.0
 - Unlicense
+- NON-AI-MIT
+- NON-AI-APACHE2
 
 
 ## Installation
@@ -35,7 +37,7 @@ Usage:
   license [command] [options]
 
 Options:
-  -i, --license, --spdx-identifier <SPDX>  The SPDX identifier of the license to generate. [default: MIT]
+  -i, --license, --spdx-identifier <SPDX>  The SPDX identifier of the license to generate. [default: NON-AI-MIT]
   -o, --output <file>                      The output file path. [default: ./LICENSE]
   -s, --silent                             Suppress console output.
   -a, --accept-placeholders                Accept default values for placeholders in the license text.
@@ -43,10 +45,11 @@ Options:
   -?, -h, --help                           Show help and usage information
 
 Commands:
-  list  List supported SPDX license identifiers
+  list                     List supported SPDX license identifiers
+  print <spdx-identifier>  Print the source of a given SPDX license identifier
 ```
 
 ### Example
 ```bash
-license --license MIT --output LICENSE.md
+license --license NON-AI-MIT --output LICENSE
 ```
