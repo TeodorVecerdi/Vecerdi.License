@@ -10,6 +10,8 @@ internal static class License {
     public const string GPL_2_0 = "GPL-2.0";
     public const string MPL_2_0 = "MPL-2.0";
     public const string UNLICENSE = "Unlicense";
+    public const string NON_AI_MIT = "NON-AI-MIT";
+    public const string NON_AI_APACHE_2_0 = "NON-AI-APACHE2";
 
     public static readonly HashSet<string> All = [
         MIT,
@@ -20,5 +22,7 @@ internal static class License {
         GPL_2_0,
         MPL_2_0,
         UNLICENSE,
+        NON_AI_MIT,
+        NON_AI_APACHE_2_0,
     ];
 }

@@ -8,7 +8,7 @@ public static class Root {
         Option<string> spdxIdentifier = new(
             aliases: ["--spdx-identifier", "--license", "-i"],
             description: "The SPDX identifier of the license to generate.",
-            getDefaultValue: () => License.MIT
+            getDefaultValue: () => License.NON_AI_MIT
         ) {
             IsRequired = false,
             Arity = ArgumentArity.ExactlyOne,
@@ -73,6 +73,8 @@ public static class Root {
             License.GPL_2_0 => GPL2.Text,
             License.MPL_2_0 => MPL2.Text,
             License.UNLICENSE => Unlicense.Text,
+            License.NON_AI_MIT => NonAiMIT.Text,
+            License.NON_AI_APACHE_2_0 => NonAiApache2.Text,
             _ => throw new Exception($"Unknown SPDX identifier '{identifier}'")
         };
     }
@@ -131,6 +133,8 @@ public static class Root {
             License.GPL_2_0 => GPL2.Placeholders,
             License.MPL_2_0 => MPL2.Placeholders,
             License.UNLICENSE => Unlicense.Placeholders,
+            License.NON_AI_MIT => NonAiMIT.Placeholders,
+            License.NON_AI_APACHE_2_0 => NonAiApache2.Placeholders,
             _ => throw new Exception($"Unknown SPDX identifier '{identifier}'")
         };
     }
